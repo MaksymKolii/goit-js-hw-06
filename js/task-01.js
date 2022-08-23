@@ -19,8 +19,8 @@ Category: Technologies
 Elements: 5
  */
 
-const listItems = document.querySelector('#categories');
-console.log(listItems.children.length);
-console.log(listItems.children[1]);
-
-console.log(window);
+const listItems = document.querySelectorAll('li.item');
+console.log(`Number of categories: ${listItems.length}`);
+listItems.forEach(item => {
+    console.log(item);
+});
