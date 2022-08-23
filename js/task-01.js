@@ -22,3 +22,5 @@ Elements: 5
 const listItems = document.querySelector('#categories');
 console.log(listItems.children.length);
 console.log(listItems.children[1]);
+
+console.log(window);
