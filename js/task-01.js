@@ -21,6 +21,10 @@ Elements: 5
 
 const listItems = document.querySelectorAll('li.item');
 console.log(`Number of categories: ${listItems.length}`);
-listItems.forEach(item => {
-    console.log(item);
-});
+console.log('');
+
+for(let i = 0; i<listItems.length; i+=1){
+    console.log(`Category: ${listItems[i].firstElementChild.textContent}`);
+    console.log(`Elements: ${listItems[i].lastElementChild.children.length}`);
+    console.log('');
+};
