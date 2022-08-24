@@ -29,3 +29,31 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
+const ingredientsPickerContainer = document.querySelector('#ingredients');
+
+//* 1 Script working and comment
+// const elem = ingredients.map(option => {
+
+//   const listEl = document.createElement('li');
+//   listEl.classList.add('item');
+//   listEl.textContent = option;
+//   return listEl;
+
+// });
+// console.log(elem);
+// ingredientsPickerContainer.append(...elem);
+
+//* 2 Function
+const makeIngredientsPicker = options => {
+  return options.map(option => {
+
+    const listEl = document.createElement('li');
+    listEl.classList.add('item');
+    listEl.textContent = option;
+    return listEl;
+  
+  })
+};
+const elements = makeIngredientsPicker(ingredients);
+ingredientsPickerContainer.append(...elements);

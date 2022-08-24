@@ -22,9 +22,18 @@ Elements: 5
 const listItems = document.querySelectorAll('li.item');
 console.log(`Number of categories: ${listItems.length}`);
 console.log('');
+console.log(listItems);
 
 for(let i = 0; i<listItems.length; i+=1){
     console.log(`Category: ${listItems[i].firstElementChild.textContent}`);
     console.log(`Elements: ${listItems[i].lastElementChild.children.length}`);
     console.log('');
 };
+
+// const result = listItems.map(option => {
+
+//     console.log(`Category: ${option.firstElementChild.textContent}`);
+//     console.log(`Elements: ${option.lastElementChild.children.length}`);
+//     console.log('');
+
+// })
