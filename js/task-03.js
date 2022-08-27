@@ -40,20 +40,71 @@ const images = [
 
 const imagesGalleryRef = document.querySelector('.gallery');
 
-const makeimageGalery = objects => {};
+const makeListImagesMarkup = ({url, alt}) =>{
+  return `
+  <li class="gallery__item">
+    <img src="${url}" alt="${alt}">
+  </li> `
+};
 
-const elements = images.map( ({url, alt}) => {
+const makeListImages = images.map(makeListImagesMarkup).join('');
 
+imagesGalleryRef.insertAdjacentHTML('beforeend',makeListImages);
+
+//? ЕЩЁ 3 Олдскульных ( ?? ) варианта !!!!  ниже
+//* 1 Скрипт закоментирован
+// const elements = images.map( ({url, alt}) => {
+
+//   const imageRef =  document.createElement('img');
+//   imageRef.src = url;
+//   imageRef.alt = alt;
+//   const galeryItemRef = document.createElement('li');
+//   galeryItemRef.classList.add('galery__list');
+//   galeryItemRef.append(imageRef);
+
+//   return galeryItemRef;
+// });
+
+
+//* 2 Функция makeOneImageSample создает шаблон для объекта
+// const makeOneImageSample = ({url, alt}) => {
+
+//     const imageRef =  document.createElement('img');
+//     imageRef.src = url;
+//     imageRef.alt = alt;
+//     const galeryItemRef = document.createElement('li');
+//     galeryItemRef.classList.add('galery__list');
+//     galeryItemRef.append(imageRef);
   
-  const imageRef =  document.createElement('img');
-  imageRef.src = url;
-  imageRef.alt = alt;
-  const galeryItemRef = document.createElement('li');
-  galeryItemRef.classList.add('galery__list');
-  galeryItemRef.append(imageRef);
+//     return galeryItemRef;
+//   };
 
-  return galeryItemRef;
-});
+//* Передаем эту Фу (callback) по ссылке и мапаем
+ //const elements = images.map(makeOneImageSample);
+ //imagesGalleryRef.append(...elements);
 
-console.log(elements);
-imagesGalleryRef.append(...elements);
+
+//* 3 Функция
+// const makeimageGalery = objects => {
+
+//   return objects.map( ({url, alt}) => {
+
+//     const imageRef =  document.createElement('img');
+//     imageRef.src = url;
+//     imageRef.alt = alt;
+//     const galeryItemRef = document.createElement('li');
+//     galeryItemRef.classList.add('galery__list');
+//     galeryItemRef.append(imageRef);
+  
+//     return galeryItemRef;
+//   });
+
+// };
+// const elements = makeimageGalery(images);
+// console.log(elements);
+// imagesGalleryRef.append(...elements);
+
+
+
+
+
