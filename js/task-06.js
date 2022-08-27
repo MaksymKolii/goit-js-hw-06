@@ -25,3 +25,18 @@
   border-color: #f44336;
 }
 */
+
+const input = document.querySelector('#validation-input');
+
+input.addEventListener('blur', onInputBlur);
+
+function onInputBlur(event) {
+  const eventTarget = event.currentTarget;
+  const res = (input.textContent = eventTarget.value);
+
+  res.length < input.dataset.length
+    ? eventTarget.classList.add('invalid')
+    : eventTarget.classList.add('valid');
+}; 
+
+

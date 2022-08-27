@@ -7,3 +7,30 @@
 <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 
 */
+
+const refs ={
+
+    input: document.querySelector('#name-input'),
+    nameLabel: document.querySelector('#name-output'),
+};
+
+refs.input.addEventListener('input', onInputChange);
+
+function onInputChange(event){
+
+    refs.nameLabel.textContent = event.currentTarget.value;
+
+    // window.addEventListener('keydown', onSpanKeypress); // Хотел,чтоб на 'пробел' печатал Anonymous Но что то не так !! :)
+}; 
+
+// function onSpanKeypress(event) {
+
+//     const SPAN_KEY_CODE = 'Space';
+//     const isSpanKey = event.code === SPAN_KEY_CODE;
+
+//     if (isSpanKey) {
+     
+//         refs.nameLabel.textContent = 'Anonymous';
+//     }
+//   };
+ 
