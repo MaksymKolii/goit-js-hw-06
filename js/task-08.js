@@ -44,8 +44,11 @@ function onFormSubmit(event) {
 };
 
 //*  Не понимаю что и как делает  reset !!??
-document.getElementsByClassName('login-form').reset;
+document.getElementsByClassName('login-form').reset; 
 
- HTMLFormElement.reset
+// document.getElementsByClassName('login-form').reset(); // task-08.js:49 Uncaught TypeError: document.getElementsByClassName(...).reset is not a function
+
+ HTMLFormElement.reset;
+ // HTMLFormElement.reset(); // task-08.js:51 Uncaught TypeError: HTMLFormElement.reset is not a function
 
  form.reset();
