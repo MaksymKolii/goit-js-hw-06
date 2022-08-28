@@ -34,8 +34,8 @@ function onFormSubmit(event) {
   formData.forEach((value, name) => {
 
     if (!value || !name) {
-      window.alert('Please input data!');
-      return;
+      // window.alert('Please input data!');
+      return window.alert('Please input data!');
     }
     console.log('onFormSubmit -> value', value);
     console.log('onFormSubmit -> name', name);
