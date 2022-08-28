@@ -48,3 +48,4 @@ document.getElementsByClassName('login-form').reset;
 
  HTMLFormElement.reset
 
+ form.reset();
