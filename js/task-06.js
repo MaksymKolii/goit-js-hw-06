@@ -32,11 +32,32 @@ input.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
   const eventTarget = event.currentTarget;
-  const res = (input.textContent = eventTarget.value);
+  const result = (input.textContent = eventTarget.value);
 
-  res.length < input.dataset.length
+  result.length < input.dataset.length
     ? eventTarget.classList.add('invalid')
     : eventTarget.classList.add('valid');
 }; 
 
 
+
+// const input = document.querySelector('#validation-input');
+
+// input.addEventListener('input', onInputText);
+
+// function onInputText(event){
+
+//   console.log(event);
+//   input.addEventListener('blur', onInputBlur);
+// };
+
+// function onInputBlur(event){
+
+//   input.textContent = document.querySelector('#validation-input').value;
+//   console.log(input.textContent.length);
+ 
+//   const eventTarget = event.currentTarget;
+//   input.textContent.length < input.dataset.length
+//   ? eventTarget.classList.add('invalid')
+//   : eventTarget.classList.add('valid');
+// };
