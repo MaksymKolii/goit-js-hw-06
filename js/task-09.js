@@ -30,9 +30,15 @@ function onInputChangeBodyColor() {
 
   refs.showColor.textContent = document.body.style.background = getRandomHexColor();
 
- // document.body.style.background = getRandomHexColor();
 };
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+
+// const inputChange = document.querySelector('input#font-size-control')
+// const abracadabra = document.querySelector('span#text')
+
+// inputChange.addEventListener('change', e => {
+//     abracadabra.style.fontSize = `${e.target.value }px`
+// })
