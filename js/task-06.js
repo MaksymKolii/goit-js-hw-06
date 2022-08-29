@@ -26,38 +26,33 @@
 }
 */
 
-const input = document.querySelector('#validation-input');
-
-input.addEventListener('blur', onInputBlur);
-
-function onInputBlur(event) {
-  const eventTarget = event.currentTarget;
-  const result = (input.textContent = eventTarget.value);
-
-  result.length < input.dataset.length
-    ? eventTarget.classList.add('invalid')
-    : eventTarget.classList.add('valid');
-}; 
-
-
-
 // const input = document.querySelector('#validation-input');
 
-// input.addEventListener('input', onInputText);
+// input.addEventListener('blur', onInputBlur);
 
-// function onInputText(event){
-
-//   console.log(event);
-//   input.addEventListener('blur', onInputBlur);
-// };
-
-// function onInputBlur(event){
-
-//   input.textContent = document.querySelector('#validation-input').value;
-//   console.log(input.textContent.length);
- 
+// function onInputBlur(event) {
 //   const eventTarget = event.currentTarget;
-//   input.textContent.length < input.dataset.length
-//   ? eventTarget.classList.add('invalid')
-//   : eventTarget.classList.add('valid');
-// };
+//   const result = (input.textContent = eventTarget.value);
+
+//   result.length < input.dataset.length
+//     ? eventTarget.classList.add('invalid')
+//     : eventTarget.classList.add('valid');
+// }; 
+
+
+
+const textInput = document.querySelector('#validation-input')
+console.log(textInput.getAttribute('data-length'))
+textInput.addEventListener('blur', event => {
+	if (event.target.value.length == textInput.getAttribute('data-length')) {
+		textInput.classList.add('valid')
+		if (textInput.classList.contains('invalid')) {
+			textInput.classList.remove('invalid')
+		}
+	} else {
+		if (textInput.classList.contains('valid')) {
+			textInput.classList.remove('valid')
+		}
+		textInput.classList.add('invalid')
+	}
+})

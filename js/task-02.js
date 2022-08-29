@@ -57,3 +57,19 @@ const makeIngredientsPicker = options => {
 };
 const elements = makeIngredientsPicker(ingredients);
 ingredientsPickerContainer.append(...elements);
+
+
+
+// const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments']
+
+// const ingredientsPickerContainer = document.querySelector('#ingredients')
+// const liArray = []
+
+// ingredients.forEach(ingredient => {
+// 	const item = document.createElement('li')
+// 	item.className = 'item'
+// 	item.textContent = ingredient
+// 	liArray.push(item)
+// })
+
+// ingredientsPickerContainer.append(...liArray)
