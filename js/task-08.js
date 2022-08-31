@@ -22,52 +22,24 @@
 Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset. */
 
 const form = document.querySelector('.login-form');
+
 form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
+  event.preventDefault();
 
-  event.preventDefault(); // предотвратить реакцию браузера по умолчанию (для форм, клипов по ссылкам...)
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
 
-  const formData = new FormData(event.currentTarget);
+  //console.log(email.value, password.value);
 
-  console.log(formData);
-  formData.forEach((value, name) => {
+  if (!email.value || !password.value) {
+    return window.alert('Please input data!');
+  }
 
-    if (!value || !name) {
-      // window.alert('Please input data!');
-      return window.alert('Please input data!');
-    }
-    console.log('onFormSubmit -> value', value);
-    console.log('onFormSubmit -> name', name);
-  });
+  const userData = { email: email.value, passport: password.value };
+  console.log(userData);
 
-};
-
-//*  Не понимаю что и как делает  reset !!??
-document.getElementsByClassName('login-form').reset; 
-
-// document.getElementsByClassName('login-form').reset(); // task-08.js:49 Uncaught TypeError: document.getElementsByClassName(...).reset is not a function
-
- HTMLFormElement.reset;
- // HTMLFormElement.reset(); // task-08.js:51 Uncaught TypeError: HTMLFormElement.reset is not a function
-
- form.reset();
-
-//  const form = document.querySelector('.login-form')
-
-// form.addEventListener('submit', handleSubmit)
-
-// function handleSubmit(event) {
-//     event.preventDefault()
-//     const {
-//         elements: { email, password },
-//     } = event.currentTarget
-
-//     if (email.value === '' || password.value === '') {
-//         return alert('Please fill in all the fields!')
-//     }
-//     const userDetails = { email: email.value, Password: password.value }
-    
-//     console.log(userDetails)
-//     event.currentTarget.reset()
-// }
+  event.currentTarget.reset();
+}
