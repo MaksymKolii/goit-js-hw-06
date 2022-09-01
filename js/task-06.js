@@ -41,4 +41,4 @@ function onInputBlur(event) {
     input.classList.remove('valid');
     input.classList.add('invalid');
   }
-};
+}
