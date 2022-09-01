@@ -28,7 +28,7 @@
 
 const input = document.querySelector('#validation-input');
 
-input.addEventListener('change', onInputBlur);
+input.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
 
