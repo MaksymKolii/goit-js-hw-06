@@ -31,24 +31,14 @@ const input = document.querySelector('#validation-input');
 input.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
+  console.log('Current length: ', typeof event.currentTarget.value.length);
+  console.log('Minimum allowable length: ', typeof input.dataset.length);
 
-  console.log('Current length: ', event.currentTarget.value.length);
-  console.log('Minimum allowable length: ', input.dataset.length);
-
-  if(event.currentTarget.value.length >= input.dataset.length){
-
-	input.classList.add('valid');
-	if (input.classList.contains('invalid')) {
-			input.classList.remove('invalid')
-		};
+  if (event.currentTarget.value.length === Number(input.dataset.length)) {
+    input.classList.remove('invalid');
+    input.classList.add('valid');
   } else {
-	if (input.classList.contains('valid')){
-
-		input.classList.remove('valid')
-	};
-	input.classList.add('invalid')
-  };
-
-
-}; 
-
+    input.classList.remove('valid');
+    input.classList.add('invalid');
+  }
+};
